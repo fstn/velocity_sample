@@ -1,0 +1,28 @@
+#[[
+<script>
+angular.module(]]#$page.getMenu().getRoute().getModuleName()#[[).config(["$routeProvider", function (e) {
+        e.when("]]#$page.getMenu().getRoute().getPath()#[[", {
+            templateUrl: "]]#$page.getMenu().getRoute().getTemplateUrl()#[[",
+            controller: "]]#$page.getMenu().getRoute().getController()#[[",
+            title: "]]#$page.getMenu().getRoute().getTitle()#[[",
+            resolve:{
+                translationPart: ["TranslationService", function (e) {
+                    return e("]]#$page.getMenu().getRoute().getTranslationFile()#[[")
+                }]
+            }
+        })
+</script>
+]]#
+#[[
+<script type="text/ng-template" id="]]#$page.getMenu().getRoute().getTemplateUrl()#[[">
+    ]]#$page.getTemplate()#[[
+</script>
+]]#
+#[[
+<script>
+    angular.module(]]#$page.getMenu().getRoute().getModuleName()#[[)
+    .controller([]]#"$page.getMenu().getRoute().getController()"#[[, [function (e) {
+        ]]#$page.getJs()#[[
+    }])
+</script>
+]]#
